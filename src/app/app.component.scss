@@ -1,0 +1,25 @@
+.float-label-input {
+  margin: 32px 0;
+  position: relative;
+}
+h1 {
+  font-family: "Monument extended", "Krona One", sans-serif;
+  font-weight: bolder;
+}
+
+.float-label-input label {
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transform-origin: left top;
+  margin-left: 20px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.float-label-input input:focus + label,
+.float-label-input input:not(:placeholder-shown) + label {
+  transform: translateY(-2.2rem) scale(0.75);
+}
+
+.float-label-input input {
+  padding-top: 1.5rem;
+}
