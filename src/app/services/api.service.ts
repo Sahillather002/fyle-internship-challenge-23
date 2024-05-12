@@ -11,6 +11,14 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getUser(username: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}${username}/repos`);
+    const result = this.http.get(`${this.apiUrl}${username}`);
+    console.log(result);
+    return result;
+  }
+
+  getRepos(username: string, perPage: number, page: number): Observable<any> {
+    return this.http.get(
+      `${this.apiUrl}${username}/repos?per_page=${perPage}&page=${page}`
+    );
   }
 }
