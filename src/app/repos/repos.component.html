@@ -1,0 +1,18 @@
+<!-- repos.component.html -->
+<div class="repos-grid">
+  <div class="repo-card" *ngFor="let repo of repos">
+    <a class="content" href="{{ repo?.html_url }}">
+      <div class="name text-3xl font-bold">
+        {{ repo.name }}
+      </div>
+      <div class="description h-16 mt-7 font-medium overflow-y-hidden">
+        {{ repo.description }}
+      </div>
+      <div id="topics" class="m-2 overflow-x-hidden">
+        <div class="topic" *ngFor="let topic of repo.topics">
+          {{ topic }}
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

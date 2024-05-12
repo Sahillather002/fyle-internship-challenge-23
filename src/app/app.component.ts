@@ -35,6 +35,12 @@ export class AppComponent implements OnInit {
     this.githubUsername = this.username;
   }
 
+  onPageChanged(event: { pageIndex: number; pageSize: number }) {
+    this.pageIndex = event.pageIndex;
+    this.perPage = event.pageSize;
+    this.getUserRepos(this.user.login);
+  }
+
   private fetchUserDetails(username: string): void {
     this.api.getUser(username).subscribe({
       next: (response) => {

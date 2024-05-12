@@ -1,0 +1,17 @@
+.loading-skeleton {
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  animation: loading-animation 1.5s infinite ease-in-out;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

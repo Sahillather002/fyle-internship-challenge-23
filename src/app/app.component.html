@@ -15,3 +15,7 @@
 </div>
 
 <app-userdetails [user]="user"></app-userdetails>
+<app-pagination [totalItems]="repos.length" (pageChanged)="onPageChanged($event)">
+</app-pagination>
+<!-- app-reposgrid.component.html -->
+<app-repos *ngIf="repos" [repos]="repos"></app-repos>
