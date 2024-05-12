@@ -1,4 +1,4 @@
-<div class="relative left-[115%] grid h-screen place-items-center">
+<div *ngIf="!githubUsername" class="relative left-[115%] grid h-screen place-items-center">
   <div class="font-bold text-3xl ">
     <form (ngSubmit)="onSubmit()" class="flex flex-col max-w-md mx-auto bg-white p-2 rounded-lg">
       <h1 class="text-center text-3xl">Enter Github user name</h1>
@@ -13,3 +13,5 @@
     </form>
   </div>
 </div>
+
+<app-userdetails [user]="user"></app-userdetails>
