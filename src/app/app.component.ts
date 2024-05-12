@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './services/api.service';
+import { PageEvent } from '@angular/material/paginator';
 
 import { User } from './user';
 import { Repo } from './repo';
@@ -35,8 +36,8 @@ export class AppComponent implements OnInit {
     this.githubUsername = this.username;
   }
 
-  onPageChanged(event: { pageIndex: number; pageSize: number }) {
-    this.pageIndex = event.pageIndex;
+  onPageChanged(event: PageEvent) {
+    this.pageIndex = event.pageIndex + 1;
     this.perPage = event.pageSize;
     this.getUserRepos(this.user.login);
   }

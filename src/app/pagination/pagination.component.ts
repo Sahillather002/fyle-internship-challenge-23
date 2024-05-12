@@ -7,22 +7,14 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent {
-  @Input() totalItems = 0;
-  @Output() pageChanged = new EventEmitter<{
-    pageIndex: number;
-    pageSize: number;
-  }>();
+  @Input() totalPages = 0;
+  @Output() pageEvent = new EventEmitter<PageEvent>();
 
   pageSizeOptions: number[] = [10, 20, 50, 100];
   pageSize = 10;
   pageIndex = 0;
 
-  onPageChange(event: PageEvent) {
-    this.pageIndex = event.pageIndex;
-    this.pageSize = event.pageSize;
-    this.pageChanged.emit({
-      pageIndex: this.pageIndex,
-      pageSize: this.pageSize,
-    });
+  handlePageEvent(event: PageEvent) {
+    this.pageEvent.emit(event);
   }
 }

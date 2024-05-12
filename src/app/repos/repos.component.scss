@@ -1,12 +1,10 @@
-/* repos.component.scss */
 .repo-card {
   display: inline-block;
-  width: calc(50% - 1rem); /* Adjust as needed */
+  width: calc(50% - 1rem);
   margin: 0.5rem;
   padding: 1rem;
-  border: 1px solid #ccc;
   border-radius: 0.5rem;
-  background-color: #fff;
+  backdrop-filter: blur(1px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }

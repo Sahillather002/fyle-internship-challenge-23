@@ -1,4 +1,4 @@
-<div *ngIf="!githubUsername" class="relative left-[115%] grid h-screen place-items-center">
+<div *ngIf="!githubUsername" class="relative left-[125%] grid h-screen place-items-center">
   <div class="font-bold text-3xl ">
     <form (ngSubmit)="onSubmit()" class="flex flex-col max-w-md mx-auto bg-white p-2 rounded-lg">
       <h1 class="text-center text-3xl">Enter Github user name</h1>
@@ -15,7 +15,7 @@
 </div>
 
 <app-userdetails [user]="user"></app-userdetails>
-<app-pagination [totalItems]="repos.length" (pageChanged)="onPageChanged($event)">
+<app-pagination *ngIf="user" [totalPages]="user.public_repos" (pageEvent)="onPageChanged($event)">
 </app-pagination>
 <!-- app-reposgrid.component.html -->
 <app-repos *ngIf="repos" [repos]="repos"></app-repos>
