@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
   }
 
   private fetchUserDetails(username: string): void {
+    this.loading = true;
     this.api.getUser(username).subscribe({
       next: (response) => {
         this.user = response;
@@ -53,11 +54,13 @@ export class AppComponent implements OnInit {
       },
       complete: () => {
         console.log('Fetched user details successfully');
+        this.loading = false;
       },
     });
   }
 
   private getUserRepos(username: string): void {
+    this.loading = true;
     this.api.getRepos(username, this.perPage, this.pageIndex).subscribe({
       next: (response) => {
         this.repos = response;
@@ -67,6 +70,7 @@ export class AppComponent implements OnInit {
       },
       complete: () => {
         console.log('Fetched repos successfully', this.repos);
+        this.loading = false;
       },
     });
   }

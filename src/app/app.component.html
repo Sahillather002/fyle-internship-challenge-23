@@ -19,3 +19,7 @@
 </app-pagination>
 <!-- app-reposgrid.component.html -->
 <app-repos *ngIf="repos" [repos]="repos"></app-repos>
+
+<div *ngIf="loading" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+  <div class="loader"></div>
+</div>
